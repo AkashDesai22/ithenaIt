@@ -1,0 +1,105 @@
+<div>
+    <form [formGroup]="userForm">
+
+        <h3>New Tenant</h3>
+
+        <h3>Organization Info</h3>
+        <div>
+            <label for="OrganizationInfo" id="name">Organization Info :</label>
+            <input type="text" class="Name" formControlName="organizationInfo" />
+            <div class="errorMessage">
+                <span class="showHint" *ngIf="!userForm.get('organizationInfo')?.hasError('required')">Please Enter Your
+                    Organization Info</span>
+            </div>
+        </div>
+
+        <div>
+            <label for="Title" id="name">Title :</label>
+            <input type="text" class="Name" formControlName="title" />
+            <div class="errorMessage">
+                <span class="showHint" *ngIf="!userForm.get('title')?.hasError('required')">Please Enter Your
+                    Title</span>
+            </div>
+        </div>
+
+        <div>
+            <label for="License Type">License Type : </label>
+            <select name="licenseType" id="select" formControlName="select">
+                <option value="free">Free</option>
+                <option value="silver">Silver</option>
+                <option value="Gold">Gold</option>
+                <option value="platinum">Platinum</option>
+            </select>
+        </div>
+
+        <h3>Admin User</h3>
+
+        <div>
+            <label for="Full Name" id="name">Full Name :</label>
+            <input type="text" class="Name" formControlName="fullName" />
+            <div class="errorMessage">
+                <span class="showHint" *ngIf="!userForm.get('fullName')?.hasError('required')">Please Enter Name</span>
+            </div>
+        </div>
+
+        <div>
+            <label for="Email" id="emailId">Email :&nbsp;&nbsp;</label>
+            <input type="text" id="email" formControlName="email" />
+            <div class="errorMessage">
+                <span class="showHint"
+                    *ngIf="!userForm.get('email')?.touched && !userForm.get('email')?.hasError('pattern')">Please Enter
+                    Your Email</span>
+                <span *ngIf="userForm.get('email')?.hasError('required') && userForm.get('email')?.touched">Email Is
+                    Required</span>
+                <span *ngIf="userForm.get('email')?.hasError('pattern')">Please Enter Correct Email Id</span>
+            </div>
+        </div>
+
+        <div>
+            <label for="password">Password :</label>
+            <input type="password" [(ngModel)]="password" id="password" placeholder="eg: Abc@123"
+                formControlName="password" autocomplete="off">
+            <div class="errorMessage">
+                <span
+                    *ngIf="userForm.get('password')?.hasError('required') && userForm.get('password')?.touched">Password
+                    is Required</span>
+            </div>
+        </div>
+
+        <div>
+            <label for="confirmPassword"> Confirm Password :</label>
+            <input type="password" id="confirmPassword" formControlName="confirmPassword" autocomplete="off">
+            <div class="errorMessage">
+                <span *ngIf="userForm.get('confirmPassword')?.hasError('required')">Password Required</span>
+            </div>
+        </div>
+
+        <h3>iGemba License</h3>
+
+        <div id="startDate">
+            <label for="date" id="birthdayHead">Start Date :</label>
+            <input type="date" id="Date" formControlName="startDate">
+            <div class="showHint">
+                <span id="showHintBirthDate"
+                    *ngIf="!userForm.get('startDate')?.touched && !userForm.get('startDate')?.dirty">Please Select Your
+                    Birth Date</span>
+            </div>
+        </div>
+
+
+        <div id="endDate">
+            <label for="date" id="birthdayHead">end Date :</label>
+            <input type="date" id="Date" formControlName="endDate">
+            <div class="showHint">
+                <span id="showHintBirthDate"
+                    *ngIf="!userForm.get('endDate')?.touched && !userForm.get('endDate')?.dirty">Please Select Your
+                    Birth Date</span>
+            </div>
+        </div>
+
+        <br>
+        <button class="Registerbutton" [disabled]="!userForm.valid" (click)="register()">Register</button>
+        <button class="Cancelbutton" (click)="cancel()">Cancel</button>
+
+    </form>
+</div>

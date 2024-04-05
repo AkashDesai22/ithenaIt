@@ -1,0 +1,48 @@
+<h3>Home / Account Management</h3>
+
+<h2>Account Management</h2>
+
+<button (click)="addAccount()"> + </button>
+<br>
+<br>
+
+
+
+<input class="searchData" type="search" placeholder="Serach User Details Here...." [(ngModel)]="serachTextValue">
+<button class="searchBtn" (click)="searchData()">Search</button>
+<br>
+<br>
+
+
+
+<ng-container *ngIf="(getUserData | search : searchText) as result">
+
+    <table>
+
+        <tr class="tableHead" *ngIf="result.length>0">
+            <th> Tenant Name </th>
+            <th> License license Type </th>
+            <th> Start Date </th>
+            <th> End Date </th>
+            <th> Edit </th>
+            <th> Delit </th>
+        </tr>
+
+        <tr class="tableData" *ngFor="let userData of result | search : searchText">
+            <td> {{userData.organizationInfo}} </td>
+            <td> {{userData.select}} </td>
+            <td> {{userData.startDate}} </td>
+            <td> {{userData.Phone}} </td>
+            <td> {{userData.endDate}} </td>
+            <td>
+                <button class="editButton" (click)="editRecord(userData.id)">Edit</button>
+            </td>
+            <td><button class="deleteButton" (click)="delitRecord(userData.id)">Delete</button></td>
+        </tr>
+    </table>
+    <div class="noResultDiv">
+        <span class="noResultMessage" *ngIf="result.length===0">Sorry...No Data Found for the User You Looking
+            For...{{'😢'}} </span>
+    </div>
+
+</ng-container>

@@ -1,0 +1,80 @@
+/* Default styles for form elements */
+.formHeader {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.Name {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+.errorMessage, .showHint {
+    color: red;
+    font-size: 14px;
+}
+
+.showHideBtn {
+    cursor: pointer;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+}
+
+.Registerbutton, .Cancelbutton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .Name {
+        width: 100%;
+    }
+
+    .showHideBtn {
+        padding: 3px 6px;
+    }
+
+    .Registerbutton, .Cancelbutton {
+        padding: 8px 16px;
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .formHeader {
+        font-size: 20px;
+    }
+
+    .Name {
+        padding: 6px;
+        margin: 4px 0;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .formHeader {
+        font-size: 18px;
+    }
+
+    .Name {
+        padding: 5px;
+        margin: 3px 0;
+    }
+
+    .showHideBtn {
+        padding: 2px 4px;
+    }
+
+    .Registerbutton, .Cancelbutton {
+        padding: 8px 12px;
+        margin-top: 15px;
+    }
+}

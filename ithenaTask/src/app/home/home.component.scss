@@ -1,0 +1,34 @@
+.accountTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .accountTable th, .accountTable td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .tableHead {
+    background-color: #f2f2f2;
+    border :1px solid Black;
+  }
+
+  tableData{
+    background-color: #f2f2f2;
+    border :1px solid Black;
+
+  }
+  
+  .editButton, .deleteButton {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .editButton:hover, .deleteButton:hover {
+    background-color: #0056b3;
+  }

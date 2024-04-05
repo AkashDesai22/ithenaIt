@@ -1,0 +1,27 @@
+{
+  "posts": [
+    {
+      "id": "ecbc",
+      "organizationInfo": "ABC",
+      "title": "Software Developer",
+      "select": "silver",
+      "fullName": "Pankaj Desai",
+      "email": "pankaj@123",
+      "password": "pankaj@123",
+      "startDate": "2024-04-30",
+      "endDate": "2024-05-06"
+    },
+    {
+      "id": "e599",
+      "organizationInfo": "Ithena",
+      "title": "AAAAA",
+      "select": "Gold",
+      "fullName": "Akash Desai",
+      "email": "Desaiakashp@gmail.com",
+      "password": "Abc@123",
+      "startDate": "2024-04-24",
+      "endDate": "2024-04-25"
+    }
+  ],
+  "comments": []
+}
